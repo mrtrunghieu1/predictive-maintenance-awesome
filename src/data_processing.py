@@ -75,11 +75,12 @@ def load_data(file_path):
     print("test_norm >> ", test_norm.shape)
 
     # Generate data
-    sequences_extraction = (list(generate_sequences(group_train, i, window_length)) for i in
+    sequences_extraction = (list(generate_sequences(group_train, i, WINDOW_LENGTH)) for i in
                             train_norm['unit'].unique())
+
     window_sequences = np.concatenate(list(sequences_extraction)).astype(np.float32)
     # Generate labels
-    labels_extraction = list(generate_labels(group_train, i, window_length) for i in train_norm['unit'].unique())
+    labels_extraction = list(generate_labels(group_train, i, WINDOW_LENGTH) for i in train_norm['unit'].unique())
     window_labels = np.concatenate(labels_extraction).reshape(-1, 1).astype(np.float32)
 
     return window_sequences, window_labels, group_train, group_test, y_test

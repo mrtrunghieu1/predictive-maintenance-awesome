@@ -6,6 +6,12 @@ index_names = ['unit', 'time_cycles']
 setting_names = ['setting_1', 'setting_2', 'setting_3']
 sensor_names = ['sensor_{}'.format(i) for i in range(1, 22)]
 
-# Parameters
-epochs = 5
-window_length = 50
+# Parameters of window extraction
+WINDOW_LENGTH = 30
+
+# Parameters of LSTM model
+EPOCHS = 150
+N_HIDDEN = 96
+N_LAYER = 4
+BATCH_SIZE = 256
+LEARNING_RATE = 0.01

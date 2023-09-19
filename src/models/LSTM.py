@@ -52,5 +52,5 @@ class LSTM(nn.Module):
         out = self.relu(self.fc_1(self.relu(hn_o + hn_1)))
         out = self.relu(self.fc_2(out))
         out = self.dropout(out)
-        out = self.fc(out)
+        out = self.fc_3(out)
         return out
